@@ -1,29 +1,250 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="A sample HTML page demonstrating various HTML elements and attributes" />
+    <meta name="author" content="CSUN Student" />
     <link rel="icon" href="https://glitch.com/favicon.ico" />
 
-    <title>Hello CSUN!</title>
+    <title>Hello CSUN! - HTML Elements Demo</title>
 
-    
     <!-- import the webpage's stylesheet -->
     <link rel="stylesheet" href="style.css" />
-    
-
 
     <!-- import the webpage's javascript file -->
     <script src="script.js" defer></script>
-  </head>
-  <body>
-    <!-- this is the start of content -->
-    <h1>
-      Hello 👋 Comp Sci !!!!
-    </h1>
-    <p>
-      This starter project gives you everything you need to start working on a new
-      website, and nothing more.
-    </p>
-  </body>
+</head>
+<body>
+    <!-- Header section with navigation -->
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#about" title="About section">About</a></li>
+                <li><a href="#content" title="Main content">Content</a></li>
+                <li><a href="#contact" title="Contact information">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main content area -->
+    <main>
+        <!-- this is the start of content -->
+        <section id="about">
+            <h1>Hello 👋 Comp Sci !!!!</h1>
+            <p class="intro">
+                This starter project gives you everything you need to start working on a new
+                website, and nothing more.
+            </p>
+
+            <!-- Adding an image with various attributes -->
+            <figure>
+                <img src="https://via.placeholder.com/300x200/0066cc/ffffff?text=CSUN"
+                     alt="CSUN placeholder image"
+                     width="300"
+                     height="200"
+                     loading="lazy"
+                     title="California State University, Northridge" />
+                <figcaption>CSUN - California State University, Northridge</figcaption>
+            </figure>
+        </section>
+
+        <section id="content">
+            <h2>Course Information</h2>
+
+            <!-- Table with various attributes -->
+            <table border="1" cellpadding="5" cellspacing="0">
+                <caption>Computer Science Courses</caption>
+                <thead>
+                    <tr>
+                        <th scope="col">Course Code</th>
+                        <th scope="col">Course Name</th>
+                        <th scope="col">Credits</th>
+                        <th scope="col">Difficulty</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>COMP 110</td>
+                        <td>Introduction to Algorithms and Programming</td>
+                        <td>3</td>
+                        <td class="difficulty-beginner">Beginner</td>
+                    </tr>
+                    <tr>
+                        <td>COMP 182</td>
+                        <td>Data Structures</td>
+                        <td>3</td>
+                        <td class="difficulty-intermediate">Intermediate</td>
+                    </tr>
+                    <tr>
+                        <td>COMP 484</td>
+                        <td>Web Programming</td>
+                        <td>3</td>
+                        <td class="difficulty-intermediate">Intermediate</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <!-- Form with various input types and attributes -->
+            <h3>Contact Form</h3>
+            <form action="#" method="post" novalidate>
+                <fieldset>
+                    <legend>Personal Information</legend>
+
+                    <label for="fullname">Full Name:</label>
+                    <input type="text"
+                           id="fullname"
+                           name="fullname"
+                           required
+                           placeholder="Enter your full name"
+                           maxlength="100" />
+
+                    <label for="email">Email:</label>
+                    <input type="email"
+                           id="email"
+                           name="email"
+                           required
+                           placeholder="your.email@csun.edu"
+                           pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" />
+
+                    <label for="phone">Phone:</label>
+                    <input type="tel"
+                           id="phone"
+                           name="phone"
+                           placeholder="(XXX) XXX-XXXX"
+                           pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" />
+
+                    <label for="graduation">Expected Graduation:</label>
+                    <input type="date"
+                           id="graduation"
+                           name="graduation"
+                           min="2024-01-01"
+                           max="2030-12-31" />
+                </fieldset>
+
+                <fieldset>
+                    <legend>Course Preferences</legend>
+
+                    <label for="major">Major:</label>
+                    <select id="major" name="major" required>
+                        <option value="">Select your major</option>
+                        <option value="cs">Computer Science</option>
+                        <option value="cit">Computer Information Technology</option>
+                        <option value="se">Software Engineering</option>
+                        <option value="other">Other</option>
+                    </select>
+
+                    <fieldset>
+                        <legend>Preferred Learning Format:</legend>
+                        <input type="radio" id="online" name="format" value="online" />
+                        <label for="online">Online</label>
+
+                        <input type="radio" id="hybrid" name="format" value="hybrid" checked />
+                        <label for="hybrid">Hybrid</label>
+
+                        <input type="radio" id="inperson" name="format" value="inperson" />
+                        <label for="inperson">In-Person</label>
+                    </fieldset>
+
+                    <fieldset>
+                        <legend>Interests (check all that apply):</legend>
+                        <input type="checkbox" id="webdev" name="interests" value="webdev" />
+                        <label for="webdev">Web Development</label>
+
+                        <input type="checkbox" id="mobile" name="interests" value="mobile" />
+                        <label for="mobile">Mobile Development</label>
+
+                        <input type="checkbox" id="ai" name="interests" value="ai" />
+                        <label for="ai">Artificial Intelligence</label>
+
+                        <input type="checkbox" id="security" name="interests" value="security" />
+                        <label for="security">Cybersecurity</label>
+                    </fieldset>
+
+                    <label for="comments">Additional Comments:</label>
+                    <textarea id="comments"
+                              name="comments"
+                              rows="4"
+                              cols="50"
+                              placeholder="Tell us about your goals and interests..."
+                              maxlength="500"></textarea>
+                </fieldset>
+
+                <button type="submit" disabled>Submit Application</button>
+                <button type="reset">Clear Form</button>
+            </form>
+        </section>
+
+        <!-- Article section with more semantic elements -->
+        <article>
+            <h2>Learning Web Development</h2>
+            <p><time datetime="2024-01-15">January 15, 2024</time> - Published by <cite>CSUN Computer Science Department</cite></p>
+
+            <p>Web development is an essential skill in today's digital world. Here are some key technologies:</p>
+
+            <dl>
+                <dt><strong>HTML</strong></dt>
+                <dd>The markup language that structures web content</dd>
+
+                <dt><strong>CSS</strong></dt>
+                <dd>The styling language that makes websites visually appealing</dd>
+
+                <dt><strong>JavaScript</strong></dt>
+                <dd>The programming language that adds interactivity</dd>
+            </dl>
+
+            <blockquote cite="https://www.w3.org/standards/webdesign/htmlcss">
+                <p>"HTML and CSS are the fundamental technologies for building Web pages."</p>
+                <footer>— <cite>W3C Web Standards</cite></footer>
+            </blockquote>
+
+            <p>For more information, visit our <a href="https://www.csun.edu" target="_blank" rel="noopener noreferrer">university website</a>.</p>
+
+            <!-- Audio and video elements -->
+            <h3>Multimedia Content</h3>
+            <audio controls preload="none">
+                <source src="sample-audio.mp3" type="audio/mpeg">
+                <source src="sample-audio.ogg" type="audio/ogg">
+                Your browser does not support the audio element.
+            </audio>
+
+            <video controls width="320" height="240" poster="video-poster.jpg">
+                <source src="sample-video.mp4" type="video/mp4">
+                <source src="sample-video.webm" type="video/webm">
+                <track kind="subtitles" src="subtitles_en.vtt" srclang="en" label="English">
+                Your browser does not support the video tag.
+            </video>
+        </article>
+
+        <!-- Aside for additional information -->
+        <aside>
+            <h3>Quick Links</h3>
+            <ul>
+                <li><a href="https://developer.mozilla.org/en-US/" target="_blank" rel="noopener">MDN Web Docs</a></li>
+                <li><a href="https://www.w3schools.com/" target="_blank" rel="noopener">W3Schools</a></li>
+                <li><a href="https://validator.w3.org/" target="_blank" rel="noopener">HTML Validator</a></li>
+            </ul>
+
+            <details>
+                <summary>More Resources</summary>
+                <p>Additional learning resources will be added here as the course progresses.</p>
+            </details>
+        </aside>
+    </main>
+
+    <!-- Footer with contact information -->
+    <footer id="contact">
+        <address>
+            <p>Contact us at: <a href="mailto:info@csun.edu">info@csun.edu</a></p>
+            <p>Phone: <a href="tel:+18186772968">(818) 677-2968</a></p>
+            <p>
+                California State University, Northridge<br>
+                18111 Nordhoff Street<br>
+                Northridge, CA 91330
+            </p>
+        </address>
+
+        <p><small>&copy; 2024 CSUN Computer Science Department. All rights reserved.</small></p>
+    </footer>
+</body>
 </html>
